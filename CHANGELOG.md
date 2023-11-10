@@ -5,6 +5,87 @@ https://github.com/highlightjs/highlight.js/issues/2877
 
 
 
+
+
+
+
+
+
+## v7.1.0 (2023-08-24)
+
+#### :rocket: Enhancement
+* [#932](https://github.com/elwayman02/ember-scroll-modifiers/pull/932) fix(issue-510): support Additional state to be passed as the IntersectionObserverEntry ([@xinlli](https://github.com/xinlli))
+
+#### :house: Internal
+* [#937](https://github.com/elwayman02/ember-scroll-modifiers/pull/937) Don't publish yarn/idea folders ([@elwayman02](https://github.com/elwayman02))
+* [#936](https://github.com/elwayman02/ember-scroll-modifiers/pull/936) Prettier v8 ([@elwayman02](https://github.com/elwayman02))
+* [#935](https://github.com/elwayman02/ember-scroll-modifiers/pull/935) eslint-plugin-qunit v8 ([@elwayman02](https://github.com/elwayman02))
+
+#### Committers: 2
+- Jordan Hawker ([@elwayman02](https://github.com/elwayman02))
+- [@xinlli](https://github.com/xinlli)
+
+## v7.0.0 (2023-05-17)
+
+#### :boom: Breaking Change
+* [#853](https://github.com/elwayman02/ember-scroll-modifiers/pull/853) Drop Ember 3.28, Node 14 ([@elwayman02](https://github.com/elwayman02))
+
+#### :rocket: Enhancement
+* [#852](https://github.com/elwayman02/ember-scroll-modifiers/pull/852) Allow `ember-source` v5 in `peerDependencies` ([@boris-petrov](https://github.com/boris-petrov))
+
+#### Committers: 2
+- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))
+- Jordan Hawker ([@elwayman02](https://github.com/elwayman02))
+
+## v6.0.0 (2023-01-03)
+
+#### :house: Internal
+* [#745](https://github.com/elwayman02/ember-scroll-modifiers/pull/745) Update Release Config ([@elwayman02](https://github.com/elwayman02))
+
+#### Committers: 1
+- Jordan Hawker ([@elwayman02](https://github.com/elwayman02))
+
+## v5.0.1 (2022-12-08)
+
+#### :house: Internal
+* [#744](https://github.com/elwayman02/ember-scroll-modifiers/pull/744) Ember 4.9 Blueprint Updates ([@elwayman02](https://github.com/elwayman02))
+
+#### Committers: 1
+- Jordan Hawker ([@elwayman02](https://github.com/elwayman02))
+
+## v5.0.0 (2022-12-07)
+
+#### :boom: Breaking Change
+* [#741](https://github.com/elwayman02/ember-scroll-modifiers/pull/741) Ember 4.8 Upgrade ([@elwayman02](https://github.com/elwayman02))
+* [#723](https://github.com/elwayman02/ember-scroll-modifiers/pull/723) Migrate to ember modifier v4 api ([@fpauser](https://github.com/fpauser))
+
+#### :rocket: Enhancement
+* [#713](https://github.com/elwayman02/ember-scroll-modifiers/pull/713) #712: Support nested scroll containers when using offset ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
+#### :memo: Documentation
+* [#743](https://github.com/elwayman02/ember-scroll-modifiers/pull/743) Fix Fastboot Dependencies ([@elwayman02](https://github.com/elwayman02))
+
+#### :house: Internal
+* [#743](https://github.com/elwayman02/ember-scroll-modifiers/pull/743) Fix Fastboot Dependencies ([@elwayman02](https://github.com/elwayman02))
+* [#742](https://github.com/elwayman02/ember-scroll-modifiers/pull/742) ESLint v8 ([@elwayman02](https://github.com/elwayman02))
+* [#741](https://github.com/elwayman02/ember-scroll-modifiers/pull/741) Ember 4.8 Upgrade ([@elwayman02](https://github.com/elwayman02))
+
+#### Committers: 3
+- Falk Pauser ([@fpauser](https://github.com/fpauser))
+- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))
+- Jordan Hawker ([@elwayman02](https://github.com/elwayman02))
+
+## v4.1.0 (2022-05-18)
+
+#### :rocket: Enhancement
+* [#622](https://github.com/elwayman02/ember-scroll-modifiers/pull/622) Add offset support for scroll-into-view ([@jdkahn](https://github.com/jdkahn))
+
+#### :memo: Documentation
+* [#622](https://github.com/elwayman02/ember-scroll-modifiers/pull/622) Add offset support for scroll-into-view ([@jdkahn](https://github.com/jdkahn))
+
+#### Committers: 1
+- [@jdkahn](https://github.com/jdkahn)
+
 ## v4.0.0 (2022-05-14)
 
 #### :boom: Breaking Change

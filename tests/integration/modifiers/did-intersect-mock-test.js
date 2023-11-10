@@ -19,10 +19,8 @@ module(
     });
 
     test('Did intersect mock triggers onEnter correctly', async function (assert) {
-      assert.expect(2);
-
       await render(
-        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`,
       );
       await this.didIntersectMock.enter('[data-test-did-intersect]');
 
@@ -30,11 +28,24 @@ module(
       assert.notOk(this.exitStub.calledOnce);
     });
 
-    test('Did intersect mock triggers onExit correctly', async function (assert) {
-      assert.expect(2);
-
+    test('Did intersect mock triggers onEnter with additional state correctly', async function (assert) {
       await render(
-        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`,
+      );
+      await this.didIntersectMock.enter('[data-test-did-intersect]', {
+        time: 100,
+      });
+
+      assert.ok(
+        this.enterStub.calledWithMatch({
+          time: 100,
+        }),
+      );
+    });
+
+    test('Did intersect mock triggers onExit correctly', async function (assert) {
+      await render(
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`,
       );
       await this.didIntersectMock.exit('[data-test-did-intersect]');
 
@@ -42,11 +53,24 @@ module(
       assert.ok(this.exitStub.calledOnce);
     });
 
-    test('Did intersect mock triggers onExit never exceeds maxEnter if maxEnter is provided', async function (assert) {
-      assert.expect(1);
-
+    test('Did intersect mock triggers onExit with additional state correctly', async function (assert) {
       await render(
-        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub maxEnter=this.maxEnter}}></div>`
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`,
+      );
+      await this.didIntersectMock.exit('[data-test-did-intersect]', {
+        time: 100,
+      });
+
+      assert.ok(
+        this.exitStub.calledWithMatch({
+          time: 100,
+        }),
+      );
+    });
+
+    test('Did intersect mock triggers onExit never exceeds maxEnter if maxEnter is provided', async function (assert) {
+      await render(
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub maxEnter=this.maxEnter}}></div>`,
       );
 
       for (let i = 0; i < this.maxEnter + 1; i++) {
@@ -57,10 +81,8 @@ module(
     });
 
     test('Did intersect mock triggers onExit never exceeds maxExit if maxExit is provided', async function (assert) {
-      assert.expect(1);
-
       await render(
-        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub maxExit=this.maxExit}}></div>`
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub maxExit=this.maxExit}}></div>`,
       );
 
       for (let i = 0; i < this.maxExit + 1; i++) {
@@ -71,10 +93,8 @@ module(
     });
 
     test('Did intersect mock fire without limit if maxEnter and maxExit is not provided', async function (assert) {
-      assert.expect(2);
-
       await render(
-        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`
+        hbs`<div data-test-did-intersect {{did-intersect onEnter=this.enterStub onExit=this.exitStub}}></div>`,
       );
 
       const numOfFiredCallback = this.maxEnter + this.maxExit;
@@ -87,13 +107,13 @@ module(
       assert.strictEqual(
         this.enterStub.callCount,
         numOfFiredCallback,
-        'Enter callback has fired more than maxEnter times'
+        'Enter callback has fired more than maxEnter times',
       );
       assert.strictEqual(
         this.exitStub.callCount,
         numOfFiredCallback,
-        'Exit callback has fired more than maxExit times'
+        'Exit callback has fired more than maxExit times',
       );
     });
-  }
+  },
 );
